@@ -1,1 +1,1 @@
-web: python resume/manage.py runserver "0.0.0.0:$PORT"
+web:python resume/manage.py runserver
