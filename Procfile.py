@@ -1,1 +1,1 @@
-web:python resume/manage.py runserver
+web:python manage.py runserver
