@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 from django.contrib import admin
 import settings
 
@@ -8,7 +8,7 @@ import settings
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^$', direct_to_template, {'template': 'index.html'}),
+                       url(r'^$', TemplateView.as_view(template_name="index.html")),
                        
                        # Uncomment the admin/doc line below to enable admin documentation:
                        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
