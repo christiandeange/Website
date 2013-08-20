@@ -1,0 +1,30 @@
+html { font-family: "Calibri", Helvetica, Arial, Sans-Serif; font-size:16px; }
+html, body { background: #EBEBEB url('static/tile.png') repeat; }
+
+hr { display: none; }
+p { color: #000000; margin: 0; }
+
+ul { margin: 0; padding: 0; }
+li { padding-left: 0pt; margin-left: 36pt; }
+
+#content { width: 700px; margin: 30px auto 10px auto; padding: 40px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 100px #bbb; }
+.email { color: #0f92f7; font-style:initial; text-align: right; }
+#headerTable { width: 100%; }
+#headerTable td { vertical-align: bottom; }
+#footer { font-size: 12px; }
+
+#emailat:before { content: " "; }
+#emaildot:before { content: " "; }
+
+.bold { font-weight: bold; }
+.space { height: 11pt; }
+.emailTD { text-align: right; }
+
+.jobtitle { float: left; }
+.float { float: right; color: #777; font-style: italic; }
+.clear { clear: both; }
+
+.maintitle { font-family: "Century Gothic", Helvetica, Arial, Sans-Serif; font-size:40px; position:relative; left:0px; }
+.title { padding-top: 24pt; line-height: 1.15; text-align: center; color: #000000; font-size: 36pt; text-decoration: underline; font-weight: bold; padding-bottom: 6pt; }
+.subtitle { padding-top: 18pt; line-height: 1.15; text-align: left; color: #0000ff; font-size: 11pt; padding-bottom: 4pt; }
+.header { font-size: 1.3em; text-decoration: none; line-height: 1.5em; color:#888; font-weight: bold; }
