@@ -2,5 +2,5 @@ php_flag engine off
 
 RewriteEngine On    # Turn on the rewriting engine
 
-RewriteRule		^.*index.html$	/about		[NC,L]
-RewriteRule		^.*resume.html$	/resume		[NC,L]
+RewriteRule		index.html$		/about		[NC,L]
+RewriteRule		resume.html$	/resume		[NC,L]
