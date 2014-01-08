@@ -1,9 +1,0 @@
-html, body { background: rgba(255, 255, 255, 0.00); }
-img, #footer { display: none; }
-* { color: #000 !important; }
-
-.float { color: #000; }
-
-#emailat:before { content: "@" }
-#emaildot:before { content: "." }
-#content { margin: 0px; padding:1px; background-color: #ffffff; border-radius: 0px; box-shadow: 0 0 0px #bbb; }

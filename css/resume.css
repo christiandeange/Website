@@ -1,0 +1,56 @@
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding-left: 0pt;
+    margin-left: 36pt;
+    line-height: 1.5em;
+}
+
+.bold { font-weight: bold; }
+
+p { margin: 0pt; }
+p.space { height: 11pt; }
+
+#emailat:before { content: " "; }
+#emaildot:before { content: " "; }
+
+.clear { clear: both; }
+
+.item ul {
+    margin-top: 5px;
+}
+
+.company {
+    float:left;
+    font-weight: bold;
+}
+
+.location {
+    float:right;
+    color: #777; 
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.position {
+    float:left;
+}
+
+.date {
+    float:right;
+    color: #777; 
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.header { 
+    font-size: 1.3em;
+    text-decoration: none;
+    color:#555;
+    font-weight: 100;
+}
+
+div#name { display:none; }

@@ -1,0 +1,42 @@
+* { color: #000 !important; }
+
+img, header, footer, h2#subtitle { display:none !important; }
+
+body, .columns { padding: 0 !important; }
+
+div#name {
+    display:block;
+    line-height: 3em;
+}
+
+#name .name {
+    font-size: 2em;
+    float: left;
+}
+
+#name .email {
+    font-size: 1em;
+    float: right;
+}
+
+.position, .date {
+    line-height: 1.5em;
+}
+
+#emailat:before { content: "@" }
+#emaildot:before { content: "." }
+
+body { line-height: 1em; }
+li { line-height: 1.2em; }
+
+span.header { line-height: 1.3em; }
+
+.header {
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 1px solid #CCC;
+    margin: 10px 0;
+    width: 100%;
+}
