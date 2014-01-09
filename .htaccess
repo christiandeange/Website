@@ -1,6 +1,9 @@
 php_flag engine off
 
-RewriteEngine On    # Turn on the rewriting engine
+RewriteEngine on
 
-RewriteRule   ^index\.html$  about
-RewriteRule   ^resume\.html$  resume
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .*[^/]$ %{REQUEST_URI}/ [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)/$ $1.html [L]
