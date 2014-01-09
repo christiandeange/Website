@@ -211,6 +211,8 @@ div.band .columns {
     padding-bottom: 1em;
 }
 
+.center { text-align: center; }
+
 header.band {
     color: white;
     text-align: center;
@@ -253,6 +255,7 @@ a.button {
     text-align: center;
     padding: 0.5em 1em;
     color: white;
+    background: #d03a0b;
     font-weight: bold;
     text-decoration: none;
     box-shadow: 0 0.2em 0 #000;
@@ -264,7 +267,7 @@ a.button {
             transition: background 0.2s ease-out;
 }
 
-a.button:hover { background: #ab3009 }
+a.button:hover { background: #982b08 }
 
 footer {
     font-size: 0.8em;
