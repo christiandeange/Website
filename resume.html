@@ -6,19 +6,25 @@
 
 	<title>Christian De Angelis</title>
 
-	<link rel="stylesheet" type="text/css" href="css/holo-touch.css" />
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/resume.css">
-	<link rel="stylesheet" type="text/css" href="css/resume-print.css" media="print">
-	<!-- <link rel="stylesheet" type="text/css" href="css/resume-print.css"> -->
-
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/holo-touch.js"></script>
-	<!-- <script type="text/javascript" src="js/instantclick.js"></script> -->
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/holo-touch.css" />
+
+	<script type="text/javascript">
+		var baseSite = window.location.protocol + "//" + window.location.host + "/";
+		if (!baseSite.contains("file://")) {}
+			$("link").each(function(index) {
+	  			$(this).attr("href", baseSite + $(this).attr("href"));
+			});
+		}
+	</script>
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="img/favicon.ico" />

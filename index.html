@@ -6,15 +6,25 @@
 
 	<title>Christian De Angelis</title>
 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/holo-touch.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" type="text/css" href="css/holo-touch.css" />
 
-	<script src="http:/ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/holo-touch.js"></script>
+	<script type="text/javascript">
+		var baseSite = window.location.protocol + "//" + window.location.host + "/";
+		if (!baseSite.contains("file://")) {}
+			$("link").each(function(index) {
+	  			$(this).attr("href", baseSite + $(this).attr("href"));
+			});
+		}
+	</script>
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="img/favicon.ico" />
@@ -23,8 +33,8 @@
 <body>
 
 	<header class="holo-actionBar"><span>Christian De Angelis</span>
-		<a href="/resume"><button style="float:right;">Résumé</button></a>
-		<a href="/index"><button style="float:right;">About</button></a>
+		<a href="resume"><button style="float:right;">Résumé</button></a>
+		<a href="index"><button style="float:right;">About</button></a>
 	</header>
 	
 	<header class="band" data-0="background-position:0px 0px;" data-1000="background-position:0px -500px;"
