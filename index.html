@@ -11,15 +11,6 @@
 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" type="text/css" href="css/holo-touch.css" />
-
-	<script type="text/javascript">
-		var baseSite = window.location.protocol + "//" + window.location.host + "/";
-		if (!baseSite.contains("file://")) {}
-			$("link").each(function(index) {
-	  			$(this).attr("href", baseSite + $(this).attr("href"));
-			});
-		}
-	</script>
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
