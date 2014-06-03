@@ -17,6 +17,12 @@ p.space { height: 11pt; }
 #emailat:before { content: " "; }
 #emaildot:before { content: " "; }
 
+.gr { color: #D50F25; }
+.gg { color: #009925; }
+.gb { color: #3369E8; }
+.gy { color: #EEB211; }
+
+
 .clear { clear: both; }
 
 .item ul {
