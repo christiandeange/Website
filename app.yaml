@@ -1,0 +1,38 @@
+application: resume-v2
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /(.*\.css)
+  static_files: css/\1
+  upload: css/(.*\.css)
+
+- url: /(.*\.(gif|png|jpg|svg))$
+  static_files: img/\1
+  upload: img/.*\.(gif|png|jpg|svg)$
+
+- url: /(.*\.js)
+  static_files: js/\1
+  upload: js/(.*\.js)
+
+- url: /txt/(.*)
+  static_files: txt/\1
+  upload: txt/(.*)
+
+- url: /.well-known
+  static_dir: .well-known
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

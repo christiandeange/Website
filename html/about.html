@@ -7,7 +7,7 @@
 	<title>Christian De Angelis</title>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/holo-touch.js"></script>
+	<script type="text/javascript" src="/holo-touch.js"></script>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -19,8 +19,8 @@
 	  ga('send', 'pageview');
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/holo-touch.css" />
+	<link rel="stylesheet" type="text/css" href="/styles.css">
+	<link rel="stylesheet" type="text/css" href="/holo-touch.css" />
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -28,18 +28,19 @@
 
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link rel="shortcut icon" href="/favicon.ico" />
 	
 </head>
 <body>
 
-	<header class="holo-actionBar"><span>Christian De Angelis</span>
-		<a href="resume.html"><button style="float:right;">Résumé</button></a>
-		<a href="index.html"><button style="float:right;">About</button></a>
+	<header class="holo-actionBar"> <span>Christian De Angelis</span>
+		<a href="/contact"><button style="float:right;">Contact</button></a>
+		<a href="/resume"><button style="float:right;">Résumé</button></a>
+		<a href="/"><button style="float:right;">About</button></a>
 	</header>
 	
 	<header class="band" data-0="background-position:0px 0px;" data-1000="background-position:0px -500px;"
-			style='background-image: url(img/background.jpg);'>
+			style='background-image: url(/background.jpg);'>
 		<div class="container columns eight" data-0="opacity: 1" data-200="opacity: 0">
 			<h1>Welcome.</h1>
 		</div>
@@ -81,9 +82,20 @@
 		<div class="container projects">
 		
 			<hr />
+		
+			<div class="columns eleven">
+				<h3><a target="_blank" href="https://play.google.com/store/apps/details?id=com.deange.hexclock">HexClock</a></h3>
+				<p>A minimal live wallpaper with background colours animating as the day progresses. This was the first real showcase I was able to create that utilized my <a target="_blank" href="https://github.com/cdeange/NumberView">NumberView</a> library.</p>
+			</div>
 
 			<div class="columns five">
-				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.carezone.caredroid.careapp"><img src="img/carezone.png" style='height:200px;' /></a>
+				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.deange.hexclock"><img src="/hexclock.png" style='height:200px;' /></a>
+			</div>
+
+			<hr />
+
+			<div class="columns five">
+				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.carezone.caredroid.careapp"><img src="/carezone.png" style='height:200px;' /></a>
 			</div>
 		
 			<div class="columns eleven">
@@ -95,17 +107,17 @@
 			
 			<div class="columns eleven">
 				<h3><a target="_blank" href="https://play.google.com/store/apps/details?id=com.deange.githubstatus">GitHub Status</a></h3>
-				<p>I build this out of necessity after finding I was checking the GitHub status page. It is planned to have push notifications incorporated into the app.</p>
+				<p>I build this out of necessity after finding I was checking the GitHub status page frequently. I plan to have push notifications incorporated into the app.</p>
 			</div>
 
 			<div class="columns five">
-				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.deange.githubstatus"><img src="img/octocat.png" /></a>
+				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.deange.githubstatus"><img src="/octocat.png" /></a>
 			</div>
 
 			<hr />
 
 			<div class="columns five">
-				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.deange.quicklink"><img src="img/quicklink.png" /></a>
+				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.deange.quicklink"><img src="/quicklink.png" /></a>
 			</div>
 		
 			<div class="columns eleven">
@@ -121,13 +133,13 @@
 			</div>
 
 			<div class="columns five">
-				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.autotalk"><img src="img/autotalk.png" /></a>
+				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.autotalk"><img src="/autotalk.png" /></a>
 			</div>
 
 			<hr />
 
 			<div class="columns sixteen center">
-				<a class="button" href="resume.html">View the rest of my résumé!</a>
+				<a class="button" href="/resume">View the rest of my résumé!</a>
 			</div>
 
 		</div>
@@ -141,8 +153,7 @@
 			
 			<div class="columns eight">			
 				<p>
-					&copy; Christian De Angelis 
-					<script>document.write(new Date().getFullYear())</script>
+					&copy; Christian De Angelis {{ year }}
 				</p>
 			</div>
 		
@@ -159,7 +170,7 @@
 		
 
 	<!--js stuff down here after the rest of the page has loaded-->
-	<script type="text/javascript" src="js/skrollr-ck.js"></script>	
+	<script type="text/javascript" src="/skrollr-ck.js"></script>	
 	<script type="text/javascript">
 	skrollr.init({
 		forceHeight: false

@@ -7,7 +7,7 @@
 	<title>Christian De Angelis</title>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/holo-touch.js"></script>
+	<script type="text/javascript" src="/holo-touch.js"></script>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -19,28 +19,29 @@
 	  ga('send', 'pageview');
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/holo-touch.css" />
-	<link rel="stylesheet" type="text/css" href="css/resume.css">
-	<link rel="stylesheet" type="text/css" href="css/resume-print.css" media="print">
+	<link rel="stylesheet" type="text/css" href="/styles.css">
+	<link rel="stylesheet" type="text/css" href="/holo-touch.css" />
+	<link rel="stylesheet" type="text/css" href="/resume.css">
+	<link rel="stylesheet" type="text/css" href="/resume-print.css" media="print">
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link rel="shortcut icon" href="/favicon.ico" />
 	
 </head>
 <body>
 
 	<header class="holo-actionBar"> <span>Christian De Angelis</span>
-		<a href="resume.html"><button style="float:right;">Résumé</button></a>
-		<a href="index.html"><button style="float:right;">About</button></a>
+		<a href="/contact"><button style="float:right;">Contact</button></a>
+		<a href="/resume"><button style="float:right;">Résumé</button></a>
+		<a href="/"><button style="float:right;">About</button></a>
 	</header>
 	
 	<header class="band" data-0="background-position:0px 0px;" data-1000="background-position:0px -250px;"
-			style='background-image: url(img/resume.png);'>
+			style='background-image: url(/resume.png);'>
 	</header>
 	
 	<div class="band main">
@@ -53,7 +54,7 @@
 
 				<div id="name">
 					<span class="name">Christian De Angelis</span>
-					<em><span class="email">christiandeange<span id="emailat">gmail</span><span id="emaildot">com</span></span></em>
+					<em><span class="email">de<span id="emailat">ngelis</span><span id="emaildot">com</span></span></em>
 
 				</div>
 
@@ -80,7 +81,7 @@
 					<div class="job location">Mountain View, CA</div>
 					<br />
 					<div class="job position">Software Engineering Intern</div>
-					<div class="job date">May 2014 - Present</div>
+					<div class="job date">May 2014 - August 2014</div>
 
 					<div class="clear"></div>
 					<ul>
@@ -168,9 +169,10 @@
 				<div class="item offset-by-one">
 					<p><span class="bold">Android Development</span></p>
 					<ul>
-						<li>Developed <em>GitHub Status</em>, a simple app that talks to the GitHub Status API</li>
-						<li>Created <em>QuickLink</em>, which uses Android intents and the goo.gl API to create shortened URLs</li>
-						<li>Used text-to-speech engine to develop <em>AutoTalk</em>, a tool which dictates text messages</li>
+						<li><em>HexClock</em> is a minimalist clock, sporting a broad colour range and shape tweening</li>
+						<li><em>GitHub Status</em> was designed to pull info from the GitHub Status API</li>
+						<li><em>QuickLink</em> uses Android intents and the goo.gl API to create shortened URLs</li>
+						<li><em>AutoTalk</em> is a tool which dictates text messages via the text-to-speech engine</li>
 					</ul>
 
 				</div>
@@ -187,8 +189,7 @@
 			
 			<div class="columns eight">			
 				<p>
-					&copy; Christian De Angelis 
-					<script>document.write(new Date().getFullYear())</script>
+					&copy; Christian De Angelis {{ year }}
 				</p>
 			</div>
 		
@@ -205,7 +206,7 @@
 		
 
 	<!--js stuff down here after the rest of the page has loaded-->
-	<script type="text/javascript" src="js/skrollr-ck.js"></script>	
+	<script type="text/javascript" src="/skrollr-ck.js"></script>	
 	<script type="text/javascript">
 	skrollr.init({
 		forceHeight: false
