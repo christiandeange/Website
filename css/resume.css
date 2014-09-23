@@ -9,6 +9,18 @@ li {
     line-height: 1.5em;
 }
 
+@font-face {
+    font-family: "fontello";
+    src: url("fontello.woff") format('woff');
+}
+
+.fontello { 
+    padding: 3px;
+    padding-left: 10px;
+    font-style: normal;
+    font-family: "fontello";
+}
+
 .bold { font-weight: bold; }
 
 p { margin: 0pt; }
@@ -21,7 +33,6 @@ p.space { height: 11pt; }
 .gg { color: #009925; }
 .gb { color: #3369E8; }
 .gy { color: #EEB211; }
-
 
 .clear { clear: both; }
 
