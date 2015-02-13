@@ -1,17 +1,14 @@
-* { color: #000 !important; }
+* { -webkit-print-color-adjust: exact; }
 
-img, header, footer, h2#subtitle { display:none !important; }
+a { color: #000 !important; }
+
+img, header, footer, h2#subtitle { display: none !important; }
 
 body, .columns { padding: 0 !important; }
 
 div#name {
-    display:block;
+    display: block;
     line-height: 3em;
-}
-
-#name .name {
-    font-size: 2em;
-    float: left;
 }
 
 #name .email {
@@ -19,11 +16,16 @@ div#name {
     float: right;
 }
 
-.position, .date {
+div.columns { 
+	display: inline-block; 
+	float: left;
+}
+
+.point, .date {
     line-height: 1.5em;
 }
 
-#emailat:before { content: "@" }
+#emailat:before  { content: "@" }
 #emaildot:before { content: "." }
 
 body { line-height: 1em; }

@@ -278,6 +278,8 @@ footer {
     text-align: center;
 }
 
+footer .container { padding-top: 20px; }
+
 .last a { margin: 0 1em }
 
 .social-linkedin { color: #277ABB }
