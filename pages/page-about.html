@@ -1,0 +1,49 @@
+<link rel="import" href="page-basic.html">
+
+<link rel="import" href="/paper-card/paper-card.html">
+<link rel="import" href="/project-list/project-list.html">
+
+<polymer-element name="page-about" extends="page-basic">
+
+  <template>
+
+    <style>
+    h2.header {
+      font-weight: 100;
+      line-height: 2em;
+      color: black;
+    }
+
+    .first {
+      font-style: italic;
+    }
+
+    </style>
+
+    <paper-card>      
+      <h2 class="header">Let's start from the beginning.</h2>
+
+      <p>
+        <span class="first">I was raised in a sleepy Canadian town called Bolton.</span> Not much to see, not much to do. I have since crawled out of the crib and found myself studying Software Engineering at University of Waterloo. Another small town, filled with students. It's a great school with a great co-op program.
+      </p>
+
+      <p>
+        I developed a variety of hobbies throughout the years. I've been a coin-collecting enthusiast for 15 years. I practiced Shōtōkan karate for 6 years, attaining a rank of Black Belt. Throughout highschool, I developed many 2D animations using Adobe Flash for personal, academic, and competitive presentations. I am an avid skier, and have recently begun snowblading. You can probably find me either looking for new places to eat or <strike>addicted to</strike> browsing Reddit.
+      </p>
+    
+      <h2 class="header">The journey of a thousand bugs begins with a single boolean.</h2>
+
+      <p>
+        After enjoying the Computer Science courses I took throughout highschool, I realized that writing software was meant to be my livelihood. My primary focus for the last 3 years has been on Android development, particularly in the San Francisco Bay Area. I have a passion for intuitive user interfaces and enchanting user experiences. Below are some projects of mine.
+      </p>
+    </paper-card>
+
+    <project-list></project-list>
+
+  </template>
+
+  <script>
+    Polymer({});
+  </script>
+
+</polymer-element>
