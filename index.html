@@ -108,14 +108,15 @@
           </core-menu>
         </template>
 
+        <script src="/touch.js"></script>
         <script src="/find-shadow-dom.js"></script>
         <script>
 
-        var togglePanel = function() {
-          document.getElementById('drawerPanel').togglePanel();
+        function closePanel() {
+          document.getElementById('drawerPanel').closeDrawer();
         }
 
-        var showPage = function(page) {
+        function showPage(page) {
           document.querySelector('core-animated-pages').selected = page;
         };
 
@@ -132,7 +133,7 @@
               }
 
               showPage(page);
-              togglePanel();
+              closePanel();
             }
           }, 
           ready: function() {
@@ -147,11 +148,14 @@
             }.bind(this);
 
             window.onhashchange();
-          }
-        });
 
-        document.addEventListener('polymer-ready', function() {
-          document.getElementById('navicon').addEventListener('click', togglePanel);
+            var drawerPanel = document.getElementById('drawerPanel');
+            drawerPanel.setAttribute('forceNarrow', Modernizr.touch);
+
+            document.getElementById('navicon').addEventListener('click', function() {
+              drawerPanel.togglePanel();
+            });
+          }
         });
 
         </script>
