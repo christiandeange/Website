@@ -20,8 +20,15 @@
   <style shim-shadowdom>
 
   @font-face {
-    font-family: BasicTitleFont;
-    src: url(basictitlefont.woff) format('woff');
+    font-family: 'BasicTitleFont';
+    src: url('basictitlefont-webfont.eot');
+    src: url('basictitlefont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('basictitlefont-webfont.woff2') format('woff2'),
+         url('basictitlefont-webfont.woff') format('woff'),
+         url('basictitlefont-webfont.ttf') format('truetype'),
+         url('basictitlefont-webfont.svg#basic_title_fontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
   }
 
   html, body {
