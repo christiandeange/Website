@@ -9,9 +9,9 @@ handlers:
   static_files: index.html
   upload: /index.html
 
-- url: /resume-print/?
-  static_files: resume-print/index.html
-  upload: /resume-print/.*
+- url: /resume/?
+  static_files: resume/index.html
+  upload: /resume/.*
 
 - url: /(.*)
   static_files: \1

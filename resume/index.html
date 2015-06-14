@@ -4,6 +4,7 @@
 <head>
   <title>Christian De Angelis</title>
 
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/pages/page-resume.css">
 
   <script src="/components/webcomponentsjs/webcomponents.js"></script>
@@ -18,18 +19,6 @@
   <common-elements></common-elements>
 
   <style shim-shadowdom>
-
-  @font-face {
-    font-family: 'BasicTitleFont';
-    src: url('basictitlefont-webfont.eot');
-    src: url('basictitlefont-webfont.eot?#iefix') format('embedded-opentype'),
-         url('basictitlefont-webfont.woff2') format('woff2'),
-         url('basictitlefont-webfont.woff') format('woff'),
-         url('basictitlefont-webfont.ttf') format('truetype'),
-         url('basictitlefont-webfont.svg#basic_title_fontregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
 
   html, body {
     height: 100%;
@@ -81,7 +70,9 @@
       padding-top: 50px;
       font-size: 3em;
       text-align: right;
-      font-family: 'BasicTitleFont', 'Lato', 'RobotoDraft', sans-serif;
+      font-family: 'Roboto Slab', 'Lato', 'RobotoDraft', sans-serif;
+      font-weight: 300;
+      text-transform: lowercase;
   }
 
   .name span {
@@ -129,7 +120,7 @@
   </div>
 
   <div id="name">
-    <div class="name center-when-small"><span>&nbsp;CHRISTIAN&nbsp;</span><span>DE ANGELIS</span></div>
+    <div class="name center-when-small"><span>&nbsp;Christian&nbsp;</span><span>De Angelis</span></div>
     <div class="links center-when-small">
       <core-icon icon="link"></core-icon>deange.ca
       <core-icon icon="mail"></core-icon>de@ngelis.com
@@ -140,6 +131,7 @@
 
   <script>
   document.addEventListener('polymer-ready', function() {
+    var prticon = document.getElementById('prticon');
     var navicon = document.getElementById('navicon');
 
     if (window.history.length === 1) {
@@ -150,7 +142,7 @@
       window.history.back();
     });
 
-    document.getElementById('prticon').addEventListener('click', function() {
+    prticon.addEventListener('click', function() {
       setTimeout(function() { window.print(); }, 400);
     });
   });

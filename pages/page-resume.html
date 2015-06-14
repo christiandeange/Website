@@ -31,8 +31,7 @@
   <script>
   Polymer('page-resume', {
     clickAction: function(e) {
-      var url = window.location.protocol + "//" + window.location.host + "/resume-print";
-      console.log(url);
+      var url = window.location.protocol + "//" + window.location.host + "/resume";
       var win = window.location.href = url;
     }
   });
