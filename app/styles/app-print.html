@@ -1,0 +1,30 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+
+<style is="custom-style">
+
+  @media print {
+    body {
+      background: white;
+      overflow: inherit;
+    }
+
+    div.cover {
+      display: none;
+    }
+
+    paper-material {
+      box-shadow: 0 0 0 0 !important;
+      border-radius: 0;
+      width: calc(100% - 32px);
+      max-width: in;
+      max-height: inherit;
+      margin: 0 auto;
+      background: white;
+      overflow: visible;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+</style>

@@ -1,18 +1,35 @@
-application: resume-v2
-version: 1
 runtime: python27
 api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /?
+
+- url: /bower_components
+  static_dir: bower_components
+  secure: optional
+
+- url: /images
+  static_dir: images
+  secure: optional
+
+- url: /(.*).(html|js|json|css)
+  static_files: \1.\2
+  upload: (.*)\.(html|js|json|css)
+  secure: optional
+
+- url: /(.*/?)?
   static_files: index.html
-  upload: /index.html
+  upload: index\.html
+  secure: optional
 
-- url: /resume/?
-  static_files: resume/index.html
-  upload: /resume/.*
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?index\.yaml
+- ^(.*/)?bower\.json
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[cod]
+- ^(.*/)?\..*
+- ^(.*/)?node_modules/.*
+- ^(.*/).md
+- ^(.*/)LICENSE
 
-- url: /(.*)
-  static_files: \1
-  upload: .*
