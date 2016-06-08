@@ -1,3 +1,8 @@
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
 .header { 
   font-size: 1.3em;
   text-decoration: none;
@@ -19,7 +24,7 @@
 .infocolumn {
   display: inline-block;
   vertical-align: text-top;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 .col33 { width: 33%; }
