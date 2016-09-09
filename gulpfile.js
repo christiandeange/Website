@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
+var run = require('gulp-run');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -11,7 +12,6 @@ var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
 var glob = require('glob-all');
-var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
 var ensureFiles = require('./tasks/ensure-files.js');
@@ -151,7 +151,15 @@ gulp.task('copy', function() {
     'app/bower_components/{webcomponentsjs,platinum-sw,sw-toolbox,promise-polyfill}/**/*'
   ]).pipe(gulp.dest(dist('bower_components')));
 
-  return merge(app, bower)
+  var acme = gulp.src([
+    'app/acme-challenge/*'
+  ]).pipe(gulp.dest(dist('acme-challenge')));
+
+  var yaml = gulp.src([
+    'app/app.yaml'
+  ]).pipe(gulp.dest(dist()));
+
+  return merge(app, bower, yaml, acme)
     .pipe($.size({
       title: 'copy'
     }));
@@ -226,10 +234,9 @@ gulp.task('clean', function() {
 
 // Watch files for changes & reload
 gulp.task('serve', ['lint', 'styles', 'elements'], function() {
+  run('dev_appserver.py app --port=3000').exec();
   browserSync({
-    port: 5000,
     notify: false,
-    logPrefix: 'PSK',
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
@@ -242,10 +249,7 @@ gulp.task('serve', ['lint', 'styles', 'elements'], function() {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: {
-      baseDir: ['.tmp', 'app'],
-      middleware: [historyApiFallback()]
-    }
+    proxy: 'localhost:3000'
   });
 
   gulp.watch(['app/**/*.html'], reload);
@@ -257,10 +261,9 @@ gulp.task('serve', ['lint', 'styles', 'elements'], function() {
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function() {
+  run('dev_appserver.py ' + dist() + ' --port=3000').exec();
   browserSync({
-    port: 5001,
     notify: false,
-    logPrefix: 'CD',
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
@@ -273,8 +276,7 @@ gulp.task('serve:dist', ['default'], function() {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: dist(),
-    middleware: [historyApiFallback()]
+    proxy: 'localhost:3000'
   });
 });
 

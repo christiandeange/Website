@@ -10,7 +10,6 @@ fi
 # Build it.
 echo "Building $APP_ID..."
 gulp
-cp app.yaml dist/app.yaml
 
 echo "Deploying $APP_ID..."
-gcloud preview app deploy dist/app.yaml --project $APP_ID --promote --version 1
+gcloud app deploy dist/app.yaml --project $APP_ID --promote --version 1
