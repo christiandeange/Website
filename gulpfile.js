@@ -7,7 +7,6 @@ var del = require('del');
 var run = require('gulp-run');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
-var reload = browserSync.reload;
 var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
@@ -85,6 +84,13 @@ var optimizeHtmlTask = function(src, dest) {
     }));
 };
 
+gulp.task('reload', function(done) {
+  browserSync.reload();
+  if (done && typeof done === 'function') {
+    done();
+  }
+});
+
 // Compile and automatically prefix stylesheets
 gulp.task('styles', function() {
   return styleTask('styles', ['**/*.css']);
@@ -106,14 +112,14 @@ gulp.task('ensureFiles', function(cb) {
 });
 
 // Lint JavaScript
-gulp.task('lint', ['ensureFiles'], function() {
+gulp.task('lint', gulp.series('ensureFiles', function() {
   return gulp.src([
       'app/scripts/**/*.js',
       'app/elements/**/*.js',
       'app/elements/**/*.html',
       'gulpfile.js'
     ])
-    .pipe(reload({
+    .pipe(browserSync.reload({
       stream: true,
       once: true
     }))
@@ -125,7 +131,7 @@ gulp.task('lint', ['ensureFiles'], function() {
   .pipe($.jscsStylish.combineWithHintResults())
   .pipe($.jshint.reporter('jshint-stylish'))
   .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
-});
+}));
 
 // Optimize images
 gulp.task('images', function() {
@@ -233,7 +239,7 @@ gulp.task('clean', function() {
 });
 
 // Watch files for changes & reload
-gulp.task('serve', ['lint', 'styles', 'elements'], function() {
+gulp.task('serve', gulp.series(gulp.parallel('lint', 'styles', 'elements'), function() {
   run('dev_appserver.py app --port=3000').exec();
   browserSync({
     notify: false,
@@ -252,15 +258,25 @@ gulp.task('serve', ['lint', 'styles', 'elements'], function() {
     proxy: 'localhost:3000'
   });
 
-  gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
-  gulp.watch(['app/elements/**/*.css'], ['elements', reload]);
-  gulp.watch(['app/{scripts,elements}/**/{*.js,*.html}'], ['lint']);
-  gulp.watch(['app/images/**/*'], reload);
-});
+  gulp.watch(['app/styles/**/*.css']).on('change', gulp.series('styles', 'reload'));
+  gulp.watch(['app/elements/**/*.css']).on('change', gulp.series('elements', 'reload'));
+  gulp.watch(['app/**/{*.js,*.html}']).on('change', gulp.series('lint', 'reload'));
+  gulp.watch(['app/images/**/*']).on('change', gulp.series('images', 'reload'));
+}));
+
+// Build production files, the default task
+gulp.task('default', gulp.series('clean', function(cb) {
+  // Uncomment 'cache-config' if you are going to use service workers.
+  runSequence(
+    ['copy', 'styles'],
+    'elements',
+    ['lint', 'images', 'fonts', 'html'],
+    'vulcanize', // 'cache-config',
+    cb);
+}));
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function() {
+gulp.task('serve:dist', gulp.series('default', function() {
   run('dev_appserver.py ' + dist() + ' --port=3000').exec();
   browserSync({
     notify: false,
@@ -278,22 +294,7 @@ gulp.task('serve:dist', ['default'], function() {
     // https: true,
     proxy: 'localhost:3000'
   });
-});
-
-// Build production files, the default task
-gulp.task('default', ['clean'], function(cb) {
-  // Uncomment 'cache-config' if you are going to use service workers.
-  runSequence(
-    ['copy', 'styles'],
-    'elements',
-    ['lint', 'images', 'fonts', 'html'],
-    'vulcanize', // 'cache-config',
-    cb);
-});
-
-// Load tasks for web-component-tester
-// Adds tasks for `gulp test:local` and `gulp test:remote`
-require('web-component-tester').gulp.init(gulp);
+}));
 
 // Load custom tasks from the `tasks` directory
 try {

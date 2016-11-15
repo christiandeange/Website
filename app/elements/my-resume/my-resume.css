@@ -16,9 +16,13 @@ a {
   line-height: 1.5em;
 }
 
-.spacer { 
-  width: 100%;
-  height: 50px;
+.fixed {
+  width: 75px;
+  display: inline-block;
+}
+
+.inforow {
+  display: flex;
 }
 
 .infocolumn {
@@ -27,8 +31,8 @@ a {
   padding-bottom: 60px;
 }
 
-.col33 { width: 33%; }
-.col66 { width: 66%; }
+.col33 { flex: 1; }
+.col66 { flex: 2; }
 
 .point {
   display: block;
@@ -47,6 +51,10 @@ a {
 
 /* Phone */
 @media screen and (max-width: 600px) {
+  .inforow {
+    display: block;
+  }
+
   .infocolumn {
     width: 100%;
   }
@@ -54,10 +62,9 @@ a {
   .header, .center-when-small {
     text-align: center !important;
   }
-
 }
 
 /* Tablet + Desktop */
-@media screen and (min-width:601px) {
+@media screen and (min-width: 601px) {
 
 }
