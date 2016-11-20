@@ -2,14 +2,14 @@
 ---
 
 ```bash
-# setup
+# init
 npm install -g gulp bower && npm install && bower install
 
-# localhost
+# dev
 gulp serve
 
-# deploy (yeah, i use appengine, so what. you can judge me but it's free hosting) ¯\_(ツ)_/¯
-./.deploy <appengine-app-id>
+# prod
+gulp deploy --project <appengine-app-id>
 
 # profit
 ```

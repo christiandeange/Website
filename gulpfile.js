@@ -3,9 +3,10 @@
 // Include Gulp & tools we'll use
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var gutil = require('gulp-util');
+var argv = require('yargs').argv;
 var del = require('del');
 var run = require('gulp-run');
-var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var merge = require('merge-stream');
 var path = require('path');
@@ -265,15 +266,14 @@ gulp.task('serve', gulp.series(gulp.parallel('lint', 'styles', 'elements'), func
 }));
 
 // Build production files, the default task
-gulp.task('default', gulp.series('clean', function(cb) {
-  // Uncomment 'cache-config' if you are going to use service workers.
-  runSequence(
-    ['copy', 'styles'],
+gulp.task('default',
+  gulp.series('clean',
+    gulp.parallel('copy', 'styles'),
     'elements',
-    ['lint', 'images', 'fonts', 'html'],
-    'vulcanize', // 'cache-config',
-    cb);
-}));
+    gulp.parallel('lint', 'images', 'fonts', 'html'),
+    'vulcanize'
+  )
+);
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', gulp.series('default', function() {
@@ -294,6 +294,18 @@ gulp.task('serve:dist', gulp.series('default', function() {
     // https: true,
     proxy: 'localhost:3000'
   });
+}));
+
+gulp.task('deploy', gulp.series('default', function() {
+  if (argv.project === undefined) {
+    throw new gutil.PluginError({
+      plugin: 'deploy',
+      message: 'gulp deploy requires --project argument'
+    });
+  }
+
+  var command = 'gcloud app deploy ' + dist('app.yaml') + ' --project ' + argv.project + ' -v 1';
+  return run(command).exec();
 }));
 
 // Load custom tasks from the `tasks` directory
