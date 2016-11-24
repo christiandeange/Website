@@ -1,17 +1,18 @@
 <dom-module id="progress-dots">
   <template>
+    <style>
+      .dot {
+        -webkit-print-color-adjust: exact;
+        display: inline-block;
+        border-radius: 50%;
+        margin-left: 3px;
+        width: 0.9em;
+        height: 0.9em;
+      }
+    </style>
+
     <template is="dom-repeat" items="{{dotsArray}}">
-      <style>
-        .dot {
-          -webkit-print-color-adjust: exact;
-          display: inline-block;
-          border-radius: 50%;
-          margin-left: 3px;
-          width: 0.9em;
-          height: 0.9em;
-        }
-      </style>
-      <div class="dot" style="background: {{item}};"></div>
+      <div class="dot" style$="background: {{item}};"></div>
     </template>
   </template>
 
