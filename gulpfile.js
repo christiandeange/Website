@@ -296,17 +296,23 @@ gulp.task('serve:dist', gulp.series('default', function() {
   });
 }));
 
-gulp.task('deploy', gulp.series('default', function() {
+gulp.task('verifyDeploy', function(callback) {
+  var error;
   if (argv.project === undefined) {
-    throw new gutil.PluginError({
-      plugin: 'deploy',
+    error = new gutil.PluginError({
+      plugin: 'verifyDeploy',
       message: 'gulp deploy requires --project argument'
     });
   }
+  return callback(error);
+});
 
+gulp.task('deployGcloud', function() {
   var command = 'gcloud app deploy ' + dist('app.yaml') + ' --project ' + argv.project + ' -v 1';
   return run(command).exec();
-}));
+});
+
+gulp.task('deploy', gulp.series('verifyDeploy', 'default', 'deployGcloud'));
 
 // Load custom tasks from the `tasks` directory
 try {
