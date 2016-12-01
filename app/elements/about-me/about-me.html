@@ -22,8 +22,7 @@
     'use strict';
 
     function calculateYearDiff(birthday) {
-      var ageDifMs = Date.now() - birthday.getTime();
-      var ageDate = new Date(ageDifMs);
+      var ageDate = new Date(Date.now() - birthday.getTime());
       return Math.abs(ageDate.getUTCFullYear() - 1970);
     }
 

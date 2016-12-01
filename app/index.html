@@ -49,7 +49,7 @@
 
     <!-- Main Content -->
     <div class="content">
-      <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="slide-from-bottom-animation" exit-animation="slide-up-animation">
+      <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="{{entryAnimation}}" exit-animation="{{exitAnimation}}" on-iron-select="_itemSelected">
         <neon-animatable data-route="home">
           <paper-material elevation="5">
             <h2 class="name">
@@ -91,32 +91,32 @@
   </template>
 
   <script>
-    
   (function(document) {
     'use strict';
 
-    var openInNewTab = function(url) {
-      var win = window.open(url, '_blank');
-      win.focus();
-    };
+    var link = function(url) {
+      return () => window.open(url, '_blank').focus();
+    }
 
-    // Grab a reference to our auto-binding template
-    // and give it some initial binding values
-    // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
     var app = document.querySelector('#app');
+    app.tapPlay = link('https://play.google.com/store/apps/dev?id=8718253161776814629');
+    app.tapGhub = link('https://github.com/cdeange');
+    app.tapTwtr = link('https://twitter.com/the_deange');
 
-    app.tapPlay = function() {
-      openInNewTab('//play.google.com/store/apps/dev?id=8718253161776814629');
-    };
-    app.tapGhub = function() {
-      openInNewTab('//github.com/cdeange');
-    };
-    app.tapTwtr = function() {
-      openInNewTab('//twitter.com/the_deange');
-    };
+    app.entryAnimation = 'slide-from-bottom-animation';
+    app.exitAnimation = 'slide-up-animation';
 
+    app._itemSelected = function(e) {
+      var route = e.target.selected;
+      if (route === 'home') {
+        app.entryAnimation = 'slide-from-bottom-animation';
+        app.exitAnimation = 'slide-up-animation';
+      } else {
+        app.entryAnimation = 'slide-from-top-animation';
+        app.exitAnimation = 'slide-down-animation';
+      }
+    };
   })(document);
-
   </script>
 
 </body>
