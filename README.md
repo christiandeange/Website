@@ -3,13 +3,13 @@
 
 ```bash
 # init
-npm install -g gulp bower && npm install && bower install
+npm install -g polymer-cli bower && npm install && bower install
 
 # dev
-gulp serve
+polymer serve --open
 
 # prod
-gulp deploy --project <appengine-app-id>
+./deploy <appengine-app-id>
 
 # profit
 ```
@@ -17,7 +17,7 @@ gulp deploy --project <appengine-app-id>
 ## Licensing
 
 ```
-Copyright (c) 2016 Christian De Angelis
+Copyright (c) 2017 Christian De Angelis
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
@@ -42,5 +42,5 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ## Contributing
 
 ```
-no thanks
+don't fork me or my son ever again
 ```

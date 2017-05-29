@@ -1,0 +1,17 @@
+{
+  "entrypoint": "index.html",
+  "sources": [
+    "acme-challenge/**/*",
+    "bower_components/**/*",
+    "elements/**/*",
+    "images/**/*",
+    "app.yaml",
+    "bower.json",
+    "favicon.ico",
+    "index.html",
+    "manifest.json"
+  ],
+  "lint": {
+    "rules": ["polymer-2"]
+  }
+}

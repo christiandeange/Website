@@ -36,4 +36,3 @@ skip_files:
 - ^(.*/)?node_modules/.*
 - ^(.*/).md
 - ^(.*/)LICENSE
-

@@ -1,0 +1,134 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/shadycss/apply-shim.html">
+
+<dom-module id="about-me">
+<template>
+  <style>
+
+  :host {
+    display: block;
+  }
+
+  span, input, p {
+    @apply --paper-font-body2;
+  }
+
+  h2.name span {
+    @apply --paper-font-display2;
+    line-height: 1.5em;
+    font-weight: 700;
+    margin-bottom: -0.5em;
+    color: #01618D;
+    display: inline-block;
+  }
+
+  h3 {
+    @apply --paper-font-headline;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .horizontal-center {
+    @apply --layout-vertical;
+    @apply --layout-justified;
+  }
+
+  #icons {
+    @apply --layout-self-center;
+    @apply --layout-horizontal;
+    @apply --layout-justified;
+    width: 100%;
+    max-width: 300px;
+    margin: 16px 0px;
+  }
+
+  #icons paper-icon-button {
+    --iron-icon-button-height: 32px;
+    --iron-icon-button-width: 32px;
+    margin: 0 auto;
+  }
+
+  paper-button.resume {
+    @apply --layout-horizontal;
+    @apply --layout-around-justified;
+    @apply --layout-self-center;
+    @apply --paper-font-button;
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--paper-pink-500);
+    color: white;
+  }
+
+  </style>
+
+  <h2 class="name">
+    <span>CHRISTIAN&nbsp;&nbsp;</span><span>DE ANGELIS</span>
+  </h2>
+  <h3>ANDROID DEVELOPER</h3>
+
+  <span>
+  Born and raised in Toronto. Recent San Francisco transplant.
+  <p />
+  <p />
+  I strive to find the intersection between great programming and great design. With over {{yearsExperience}} years of experience in the Android world, I've come to realize that learning never stops, and that's what keeps me sharp. You can find some links to my words and works below.
+  </span>
+
+  <div class="horizontal-center">
+    <div id="icons" class="horizontal around-justified layout">
+      <paper-icon-button on-click="tapPlay" src="images/play_icon.png"></paper-icon-button>
+      <paper-icon-button on-click="tapGhub" src="images/ghub_icon.png"></paper-icon-button>
+      <paper-icon-button on-click="tapTwtr" src="images/twtr_icon.png"></paper-icon-button>
+      <br />
+    </div>
+
+    <paper-button on-click="tapResume" raised class="resume">Résumé</paper-button>
+  </div>
+</template>
+
+<script>
+
+function calculateYearDiff() {
+  var birthDate = new Date(2012, 6, 16); // roughly age when starting android
+  var ageDate = new Date(Date.now() - birthDate.getTime());
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+class AboutMe extends Polymer.Element {
+  static get is() { return 'about-me'; }
+  static get properties() {
+    return {
+      yearsExperience: {
+        type: Number,
+        readOnly: true,
+        value: calculateYearDiff(),
+      },
+    };
+  }
+
+  _openLink(url) {
+    window.open(url, '_blank').focus();
+  }
+
+  tapPlay() {
+    this._openLink('https://play.google.com/store/apps/dev?id=8718253161776814629');
+  }
+
+  tapGhub() {
+    this._openLink('https://github.com/cdeange');
+  }
+
+  tapTwtr() {
+    this._openLink('https://twitter.com/the_deange');
+  }
+
+  tapResume() {
+    document.querySelector('#app').go('resume');
+  }
+}
+
+customElements.define(AboutMe.is, AboutMe);
+
+</script>
+</dom-module>

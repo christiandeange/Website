@@ -1,6 +1,4 @@
-node_modules
-dist
-bower_components
-.tmp
-.publish/
+node_modules/
+bower_components/
 acme-challenge/
+build/

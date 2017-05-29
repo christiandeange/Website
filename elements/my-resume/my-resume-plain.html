@@ -1,39 +1,122 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 
 <dom-module id="my-resume-plain">
 <template>
 
-  <link rel="stylesheet" type="text/css" href="my-resume.css">
+  <style>
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .header { 
+    font-size: 1.3em;
+    text-decoration: none;
+    color: #555;
+    font-weight: 100;
+    margin-bottom: 10px;
+  }
+
+  .job {
+    font-size: 0.8em;
+    line-height: 1.5em;
+  }
+
+  .skill {
+    width: 75px;
+    display: inline-block;
+  }
+
+  .inforow {
+    display: flex;
+  }
+
+  .infocolumn {
+    display: inline-block;
+    vertical-align: text-top;
+  }
+
+  .inforow:not(:last-child) {
+    padding-bottom: 60px;
+  }
+
+  .flex1 { flex: 1; }
+  .flex2 { flex: 2; }
+  .flex3 { flex: 3; }
+  .flex4 { flex: 4; }
+  .flex5 { flex: 5; }
+  .flex6 { flex: 6; }
+  .flex7 { flex: 7; }
+  .flex8 { flex: 8; }
+  .flex9 { flex: 9; }
+  .flex10 { flex: 10; }
+
+  .point {
+    display: block;
+    font-weight: normal;
+  }
+
+  .position {
+    font-weight: 500;
+    margin-right: 8px;
+  }
+
+  .date {
+    color: #777; 
+    font-style: italic;
+  }
+
+  /* Phone */
+  @media screen and (max-width: 600px) {
+    .inforow {
+      display: block;
+    }
+
+    .infocolumn {
+      width: 100%;
+    }
+
+    .header, .center-when-small {
+      text-align: center !important;
+    }
+  }
+
+  /* Tablet + Desktop */
+  @media screen and (min-width: 601px) {
+
+  }
+  </style>
 
   <div>
     <div class="spacer"></div>
 
     <div class="inforow">
-      <div class="infocolumn col33">
+      <div class="infocolumn flex1">
         <div class="header">skills</div>
 
         <div class="center-when-small">
           <div class="job point">
-            <div class="fixed">android</div>
+            <div class="skill">android</div>
             <progress-dots dots="blue blue blue blue blue"></progress-dots>
           </div>
           <div class="job point">
-            <div class="fixed">python</div>
+            <div class="skill">python</div>
             <progress-dots dots="blue blue blue blue grey"></progress-dots>
           </div>
           <div class="job point">
-            <div class="fixed">bash</div>
+            <div class="skill">bash</div>
             <progress-dots dots="blue blue blue blue grey"></progress-dots>
           </div>
           <div class="job point">
-            <div class="fixed">ruby</div>
+            <div class="skill">ruby</div>
             <progress-dots dots="blue blue blue grey grey"></progress-dots>
           </div>
         </div>
       </div>
 
-      <div class="infocolumn col66">
+      <div class="infocolumn flex2">
         <div class="header">work</div>
 
         <div class="">
@@ -72,7 +155,7 @@
     </div>
 
     <div class="inforow">
-      <div class="infocolumn col33">
+      <div class="infocolumn flex1">
         <div class="header">education</div>
 
         <div class="center-when-small">
@@ -84,11 +167,11 @@
         <div class="job point center-when-small">Graduated with Distinction</div>
       </div>
 
-      <div class="infocolumn col66">
+      <div class="infocolumn flex2">
         <div class="header">projects</div>
 
         <div class="job position"><a href="https://github.com/cdeange/uwaterloo-api" target="blank">UWaterloo API</a></div>
-        <div class="job point">Android library for accessing the UWaterloo Open Data API.</div>
+        <div class="job point">Comprehensive Android wrapper library for the UWaterloo Open Data API, giving access to course information, food locations, events, and more.</div>
         <br />
 
         <div class="job position"><a href="https://github.com/cdeange/HexClock" target="blank">HexClock</a></div>
@@ -112,13 +195,12 @@
 
 <script>
 
-(function() {
-  'use strict';
-  Polymer({
-    is: 'my-resume-plain',
-    properties: {}
-  });
-})();
+class MyResumePlain extends Polymer.Element {
+  static get is() { return 'my-resume-plain'; }
+  static get properties() { return {}; }
+}
+
+customElements.define(MyResumePlain.is, MyResumePlain);
 
 </script>
 </dom-module>
