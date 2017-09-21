@@ -26,6 +26,10 @@
       color: black;
     }
 
+    #first-name {
+      margin: 0px 20px;
+    }
+
     .name-container {
       padding: 20px 0px;
       text-align: right;
@@ -51,7 +55,7 @@
     }
 
     .links {
-      margin: 20px 0px;
+      margin: 20px 0px 0px 0px;
     }
 
     .links :not(:first-child) {
@@ -87,9 +91,9 @@
     </div>
 
     <div class='name-container'>
-      <div class='name center-when-small'><span>&nbsp;&nbsp;Christian&nbsp;&nbsp;</span><span>De Angelis</span></div>
+      <div class='name center-when-small'><span id="first-name">Christian</span><span>De Angelis</span></div>
       <div class='links center-when-small'>
-        <iron-icon icon='link'></iron-icon>christian.sh
+        <iron-icon icon='custom-icons:github'></iron-icon>cdeange
         <iron-icon icon='mail'></iron-icon>me@christian.sh
       </div>
     </div>
