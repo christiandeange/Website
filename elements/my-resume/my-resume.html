@@ -1,9 +1,8 @@
-<link rel='import' href='../../bower_components/polymer/polymer.html'>
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel='import' href='../../bower_components/paper-styles/typography.html'>
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel='import' href='my-resume-plain.html'>
-
 <link rel='import' type='css' href=''>
+
+<link rel="import" href="../custom-icons.html">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:300">
 
@@ -58,7 +57,7 @@
       margin: 20px 0px 0px 0px;
     }
 
-    .links :not(:first-child) {
+    .links iron-icon:not(:first-child) {
       margin-left: 20px;
     }
 
@@ -93,8 +92,8 @@
     <div class='name-container'>
       <div class='name center-when-small'><span id="first-name">Christian</span><span>De Angelis</span></div>
       <div class='links center-when-small'>
-        <iron-icon icon='custom-icons:github'></iron-icon>cdeange
-        <iron-icon icon='mail'></iron-icon>me@christian.sh
+        <iron-icon icon='custom-icons:github'></iron-icon><a href="https://github.com/cdeange" target="blank">cdeange</a>
+        <iron-icon icon='mail'></iron-icon><a href="mailto:me@christian.sh" target="blank">me@christian.sh</a>
       </div>
     </div>
 

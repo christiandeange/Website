@@ -19,9 +19,6 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.1",
     "web-animations-js": "web-animations/web-animations-js#^2.2.5"
   },
-  "devDependencies": {
-    "web-component-tester": "^6.0.0"
-  },
   "ignore": [],
   "license": "MIT"
 }
