@@ -1,6 +1,4 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../progress-dots/progress-dots.html">
 
 <dom-module id="my-resume-plain">
 <template>
@@ -98,8 +96,16 @@
 
         <div class="center-when-small">
           <div class="job point">
-            <div class="skill">android</div>
+            <div class="skill">kotlin</div>
             <progress-dots dots="blue blue blue blue blue"></progress-dots>
+          </div>
+          <div class="job point">
+            <div class="skill">java</div>
+            <progress-dots dots="blue blue blue blue blue"></progress-dots>
+          </div>
+          <div class="job point">
+            <div class="skill">python</div>
+            <progress-dots dots="blue blue blue blue grey"></progress-dots>
           </div>
           <div class="job point">
             <div class="skill">bash</div>
@@ -107,10 +113,6 @@
           </div>
           <div class="job point">
             <div class="skill">ruby</div>
-            <progress-dots dots="blue blue blue blue grey"></progress-dots>
-          </div>
-          <div class="job point">
-            <div class="skill">python</div>
             <progress-dots dots="blue blue blue grey grey"></progress-dots>
           </div>
         </div>
@@ -120,11 +122,11 @@
         <div class="header">work</div>
 
         <div class="">
-          <span class="job position">Android Developer | Square</span>
-          <span class="job date">2017</span>
+          <span class="job position">Android Engineer | Square</span>
+          <span class="job date">2017 – present</span>
         </div>
 
-        <div class="job point">Working on the Android Point of Sale app, improving the merchant user experience for transaction management.</div>
+        <div class="job point">Developing new features addressing the needs of small businesses and individual sellers using Square Point of Sale. Designed a native onboarding experience for Canadian sellers powered by a server-driven templating engine.</div>
 
         <br />
 
@@ -151,7 +153,7 @@
           <span class="job date">2014</span>
         </div>
 
-        <div class="job point">Worked with multiple teams on designing and implementing Google Play Services APIs. Redesigned Play Services UI components to conform to the Material Design spec.</div>
+        <div class="job point">Worked with multiple teams on designing and creating new Google Play Services APIs. Redesigned the Play Services permissions flow to conform to Material Design.</div>
 
         <br />
         <div class="">
@@ -179,16 +181,12 @@
       <div class="infocolumn flex2">
         <div class="header">android projects</div>
 
+        <div class="job position"><a href="https://github.com/cdeange/hubbub" target="blank">Hubbub</a></div>
+        <div class="job point">Monitors GitHub's website + API status and sends push notifications to your Android device when GitHub experiences technical difficulties.</div>
+        <br />
+
         <div class="job position"><a href="https://github.com/cdeange/uwaterloo-api" target="blank">UWaterloo API</a></div>
         <div class="job point">Comprehensive Android wrapper library for the UWaterloo Open Data API, giving access to course information, food locations, events, and more.</div>
-        <br />
-
-        <div class="job position"><a href="https://github.com/cdeange/HexClock" target="blank">HexClock</a></div>
-        <div class="job point">Minimalist clock, sporting a dynamic colour range and Bézier path animations. Usable as an Android daydream screensaver.</div>
-        <br />
-
-        <div class="job position"><a href="https://github.com/cdeange/github-status" target="blank">GitHub Status</a></div>
-        <div class="job point">Send push notifications when GitHub experiences technical difficulties.</div>
         <br />
 
       </div>
