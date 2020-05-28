@@ -3,7 +3,7 @@
 
 ```bash
 # init
-npm install -g polymer-cli bower && npm install && bower install
+npm install -g polymer-cli && npm install
 
 # dev
 polymer serve --open
@@ -17,7 +17,7 @@ polymer serve --open
 ## Licensing
 
 ```
-Copyright (c) 2018 Christian De Angelis
+Copyright (c) 2020 Christian De Angelis
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
