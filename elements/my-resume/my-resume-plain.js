@@ -179,11 +179,11 @@ class MyResumePlain extends PolymerElement {
       <div class="infocolumn flex2">
         <div class="header">android projects</div>
 
-        <div class="job position"><a href="https://github.com/cdeange/hubbub" target="blank">Hubbub</a></div>
+        <div class="job position"><a href="https://github.com/christiandeange/hubbub" target="blank">Hubbub</a></div>
         <div class="job point">Monitors GitHub's website + API status and sends push notifications to your Android device when GitHub experiences technical difficulties.</div>
         <br>
 
-        <div class="job position"><a href="https://github.com/cdeange/uwaterloo-api" target="blank">UWaterloo API</a></div>
+        <div class="job position"><a href="https://github.com/christiandeange/uwaterloo-api" target="blank">UWaterloo API</a></div>
         <div class="job point">Comprehensive Android wrapper library for the UWaterloo Open Data API, giving access to course information, food locations, events, and more.</div>
         <br>
 

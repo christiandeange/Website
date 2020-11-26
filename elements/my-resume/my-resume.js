@@ -74,7 +74,7 @@ class MyResume extends PolymerElement {
     <div class="name-container">
       <div class="name center-when-small"><span id="first-name">Christian</span><span>De Angelis</span></div>
       <div class="links center-when-small">
-        <iron-icon icon="custom-icons:github"></iron-icon><a href="https://github.com/cdeange" target="blank">cdeange</a>
+        <iron-icon icon="custom-icons:github"></iron-icon><a href="https://github.com/christiandeange" target="blank">christiandeange</a>
         <iron-icon icon="mail"></iron-icon><a href="mailto:me@christian.sh" target="blank">me@christian.sh</a>
       </div>
     </div>
