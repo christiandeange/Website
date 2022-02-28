@@ -1,4 +1,4 @@
-import { PolymerElement, html } from '@polymer/polymer';
+import {PolymerElement} from '@polymer/polymer';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-icons/iron-icons.js';
@@ -7,9 +7,9 @@ import '@polymer/paper-styles/typography.js';
 
 import '../my-resume/my-resume.js';
 
-const $_documentContainer = document.createElement('template');
+const $documentContainer = document.createElement('template');
 
-$_documentContainer.innerHTML = `<dom-module id="resume-app">
+$documentContainer.innerHTML = `<dom-module id="resume-app">
 
 <template>
   <style>
@@ -79,12 +79,12 @@ $_documentContainer.innerHTML = `<dom-module id="resume-app">
 
 </dom-module>`;
 
-document.head.appendChild($_documentContainer.content);
+document.head.appendChild($documentContainer.content);
 
 class ResumeApp extends PolymerElement {
-  static get is() { return 'resume-app'; }
+  static get is() {return 'resume-app';}
 
-  static get properties() { return {}; }
+  static get properties() {return {};}
 
   static get observers() {
     return [
@@ -101,7 +101,7 @@ class ResumeApp extends PolymerElement {
   }
 
   _routeChanged(changeRecord) {
-    var path = changeRecord.value.path || "";
+    var path = changeRecord.value.path || '';
     if (path !== '') {
       this.go();
     }
@@ -113,7 +113,7 @@ class ResumeApp extends PolymerElement {
   }
 
   tapPrint() {
-    setTimeout(function() { window.print(); }, 420);
+    setTimeout(function() {window.print();}, 420);
   }
 }
 

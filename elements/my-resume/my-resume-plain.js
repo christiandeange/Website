@@ -1,5 +1,5 @@
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import {html} from '@polymer/polymer/lib/utils/html-tag.js';
+import {PolymerElement} from '@polymer/polymer/polymer-element.js';
 
 import '../progress-dots/progress-dots.js';
 
@@ -217,8 +217,8 @@ class MyResumePlain extends PolymerElement {
 `;
   }
 
-  static get is() { return 'my-resume-plain'; }
-  static get properties() { return {}; }
+  static get is() {return 'my-resume-plain';}
+  static get properties() {return {};}
 }
 
 customElements.define(MyResumePlain.is, MyResumePlain);

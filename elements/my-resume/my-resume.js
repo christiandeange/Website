@@ -1,6 +1,6 @@
 import '@polymer/iron-icons/iron-icons.js';
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import {html} from '@polymer/polymer/lib/utils/html-tag.js';
+import {PolymerElement} from '@polymer/polymer/polymer-element.js';
 
 import './my-resume-plain.js';
 import '../custom-icons.js';
@@ -83,9 +83,9 @@ class MyResume extends PolymerElement {
 `;
   }
 
-  static get is() { return 'my-resume'; }
+  static get is() {return 'my-resume';}
 
-  static get properties() { return {}; }
+  static get properties() {return {};}
 }
 
 customElements.define(MyResume.is, MyResume);

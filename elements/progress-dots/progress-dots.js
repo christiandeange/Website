@@ -1,5 +1,5 @@
-import { PolymerElement } from '@polymer/polymer/polymer-element.js';
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import {PolymerElement} from '@polymer/polymer/polymer-element.js';
+import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
 var colourMap = {
   'blue': '#3696D2',
@@ -32,7 +32,7 @@ class ProgressDots extends PolymerElement {
 `;
   }
 
-  static get is() { return 'progress-dots'; }
+  static get is() {return 'progress-dots';}
   static get properties() {
     return {
       dots: {
