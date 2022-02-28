@@ -120,11 +120,20 @@ class MyResumePlain extends PolymerElement {
         <div class="header">work</div>
 
         <div class="">
-          <span class="job position">Android Engineer | Square</span>
-          <span class="job date">2017 – present</span>
+          <span class="job position">Senior Android Engineer | Square</span>
+          <span class="job date">2020 – present</span>
         </div>
 
-        <div class="job point">Developing new features addressing the needs of businesses and individual sellers using Square Point of Sale. Designed a native onboarding experience for Canadian sellers. Started development of <a href="https://developer.squareup.com/docs/terminal-api/overview">Terminal API</a> for anyone to take payments with Square Terminal.</div>
+        <div class="job point">Started development of <a href="https://developer.squareup.com/docs/terminal-api/overview">Terminal API</a> to enable merchants with their own existing point of sale system to take payments with Square Terminal. Assisted in creating and maintaining internal build tools for developer efficiency.</div>
+
+        <br>
+
+        <div class="">
+          <span class="job position">Android Engineer | Square</span>
+          <span class="job date">2017 – 2020</span>
+        </div>
+
+        <div class="job point">Developing new features addressing the needs of small businesses and individual sellers using <a href="https://squareup.com/payments">Square Point of Sale</a>. Designed a native onboarding experience for Canadian sellers.</div>
 
         <br>
 
