@@ -114,6 +114,30 @@ class MyResumePlain extends PolymerElement {
             <progress-dots dots="blue blue blue grey grey"></progress-dots>
           </div>
         </div>
+
+        <br>
+
+        <div class="header">education</div>
+
+        <div class="center-when-small">
+          <span class="job position">University of Waterloo</span>
+          <span class="job date">2016</span>
+        </div>
+
+        <div class="job point center-when-small">Bachelor of Software Engineering</div>
+        <div class="job point center-when-small">Graduated with Distinction</div>
+
+        <br>
+
+        <div class="header">patents</div>
+
+        <div class="center-when-small">
+          <span class="job position"><a href="https://patents.google.com/patent/US11216795B2" target="blank">US11216795 B2</a></span>
+          <span class="job date">2019</span>
+        </div>
+
+        <div class="job point center-when-small">Pairing merchant Point of Sale with payment&nbsp;reader terminal via server Application&nbsp;Programming&nbsp;Interface.</div>
+
       </div>
 
       <div class="infocolumn flex2">
@@ -173,17 +197,7 @@ class MyResumePlain extends PolymerElement {
     </div>
 
     <div class="inforow">
-      <div class="infocolumn flex1">
-        <div class="header">education</div>
-
-        <div class="center-when-small">
-          <span class="job position">University of Waterloo</span>
-          <span class="job date">2016</span>
-        </div>
-
-        <div class="job point center-when-small">Bachelor of Software Engineering</div>
-        <div class="job point center-when-small">Graduated with Distinction</div>
-      </div>
+      <div class="infocolumn flex1"></div>
 
       <div class="infocolumn flex2">
         <div class="header">android projects</div>
