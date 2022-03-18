@@ -98,7 +98,7 @@ class MyResumePlain extends PolymerElement {
             <progress-dots dots="blue blue blue blue blue"></progress-dots>
           </div>
           <div class="job point">
-            <div class="skill">java</div>
+            <div class="skill">gradle</div>
             <progress-dots dots="blue blue blue blue blue"></progress-dots>
           </div>
           <div class="job point">
@@ -148,7 +148,7 @@ class MyResumePlain extends PolymerElement {
           <span class="job date">2020 – present</span>
         </div>
 
-        <div class="job point">Started development of <a href="https://developer.squareup.com/docs/terminal-api/overview">Terminal API</a> to enable merchants with their own existing point of sale system to take payments with Square Terminal. Assisted in creating and maintaining internal build tools for developer efficiency.</div>
+        <div class="job point">Started development of <a href="https://developer.squareup.com/docs/terminal-api/overview">Terminal API</a> to enable merchants with their own existing point of sale system to take payments with Square Terminal. Assisted in maintaining our Gradle Enterprise instance, as well as creating internal build tools for developer efficiency and dependency management.</div>
 
         <br>
 
