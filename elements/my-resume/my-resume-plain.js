@@ -144,8 +144,17 @@ class MyResumePlain extends PolymerElement {
         <div class="header">work</div>
 
         <div class="">
+          <span class="job position">Software Engineer | Stripe</span>
+          <span class="job date">2022 – present</span>
+        </div>
+
+        <div class="job point">Onboarding on the Terminal Integration Experience team.</div>
+
+        <br>
+
+        <div class="">
           <span class="job position">Senior Android Engineer | Square</span>
-          <span class="job date">2020 – present</span>
+          <span class="job date">2020 – 2022</span>
         </div>
 
         <div class="job point">Started development of <a href="https://developer.squareup.com/docs/terminal-api/overview">Terminal API</a> to enable merchants with their own existing point of sale system to take payments with Square Terminal. Assisted in maintaining our Gradle Enterprise instance, as well as creating internal build tools for developer efficiency and dependency management.</div>
@@ -195,24 +204,6 @@ class MyResumePlain extends PolymerElement {
         <div class="job point">Worked with a small team of developers and designers to build an app from the ground up that allows users to manage health information for their loved ones.</div>
       </div>
     </div>
-
-    <div class="inforow">
-      <div class="infocolumn flex1"></div>
-
-      <div class="infocolumn flex2">
-        <div class="header">android projects</div>
-
-        <div class="job position"><a href="https://github.com/christiandeange/hubbub" target="blank">Hubbub</a></div>
-        <div class="job point">Monitors GitHub's website + API status and sends push notifications to your Android device when GitHub experiences technical difficulties.</div>
-        <br>
-
-        <div class="job position"><a href="https://github.com/christiandeange/uwaterloo-api" target="blank">UWaterloo API</a></div>
-        <div class="job point">Comprehensive Android wrapper library for the UWaterloo Open Data API, giving access to course information, food locations, events, and more.</div>
-        <br>
-
-      </div>
-    </div>
-
   </div>
 `;
   }
