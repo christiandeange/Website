@@ -98,6 +98,10 @@ class MyResumePlain extends PolymerElement {
             <progress-dots dots="blue blue blue blue blue"></progress-dots>
           </div>
           <div class="job point">
+            <div class="skill">java</div>
+            <progress-dots dots="blue blue blue blue blue"></progress-dots>
+          </div>
+          <div class="job point">
             <div class="skill">gradle</div>
             <progress-dots dots="blue blue blue blue blue"></progress-dots>
           </div>
@@ -107,10 +111,6 @@ class MyResumePlain extends PolymerElement {
           </div>
           <div class="job point">
             <div class="skill">python</div>
-            <progress-dots dots="blue blue blue grey grey"></progress-dots>
-          </div>
-          <div class="job point">
-            <div class="skill">ruby</div>
             <progress-dots dots="blue blue blue grey grey"></progress-dots>
           </div>
         </div>
