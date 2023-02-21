@@ -1,3 +1,5 @@
-node_modules/
-acme-challenge/
-build/
+/build/
+/.gradle/
+/.idea/
+
+.DS_Store

@@ -2,14 +2,14 @@
 ---
 
 ```bash
-# init
-npm install -g polymer-cli && npm install
-
 # dev
-polymer serve --open
+./gradlew jsBrowserDevelopment
+
+# stage
+./gradlew clean deploy --project-id <appengine-app-id>
 
 # prod
-./deploy <appengine-app-id>
+./gradlew clean deploy --project-id <appengine-app-id> --promote
 
 # profit
 ```
@@ -17,7 +17,7 @@ polymer serve --open
 ## Licensing
 
 ```
-Copyright (c) 2020 Christian De Angelis
+Copyright (c) 2023 Christian De Angelis
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the

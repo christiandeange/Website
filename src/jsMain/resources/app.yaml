@@ -1,0 +1,21 @@
+runtime: python311
+
+handlers:
+  - url: /robots.txt
+    static_files: robots.txt
+    upload: robots\.txt
+    secure: always
+
+  - url: /favicon
+    static_dir: favicon
+    secure: always
+
+  - url: /(.*).(html|js|json|css|txt)
+    static_files: \1.\2
+    upload: (.*)\.(html|js|json|css|txt)
+    secure: always
+
+  - url: /(.*/?)?
+    static_files: index.html
+    upload: index\.html
+    secure: always
