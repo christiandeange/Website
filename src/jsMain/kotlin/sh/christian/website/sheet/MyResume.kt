@@ -6,6 +6,7 @@ import org.jetbrains.compose.web.css.CSSMediaQuery.MediaType.Enum.Screen
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.DisplayStyle.Companion.Block
 import org.jetbrains.compose.web.css.DisplayStyle.Companion.Flex
+import org.jetbrains.compose.web.css.DisplayStyle.Companion.Inline
 import org.jetbrains.compose.web.css.DisplayStyle.Companion.InlineBlock
 import org.jetbrains.compose.web.css.StyleSheet
 import org.jetbrains.compose.web.css.and
@@ -72,6 +73,14 @@ object MyResume : StyleSheet() {
       display(InlineBlock)
       height(20.px)
       property("vertical-align", "middle")
+    }
+  }
+
+  val profileLink by style {
+    padding(10.px, 0.px)
+    display(Inline)
+    onPhone {
+      display(Block)
     }
   }
 

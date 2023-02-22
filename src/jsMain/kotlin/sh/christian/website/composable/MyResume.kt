@@ -20,8 +20,8 @@ import sh.christian.website.sheet.MyResume.infocolumn
 import sh.christian.website.sheet.MyResume.inforow
 import sh.christian.website.sheet.MyResume.links
 import sh.christian.website.sheet.MyResume.name
-import sh.christian.website.sheet.MyResume.resumeHeader
 import sh.christian.website.sheet.MyResume.phoneCentered
+import sh.christian.website.sheet.MyResume.resumeHeader
 import kotlin.text.Typography.nbsp
 
 @Composable
@@ -57,17 +57,24 @@ private fun Name() {
 @Composable
 private fun Links() {
   Div(attrs = { classes(links) }) {
-    GitHubIcon()
-    A(href = "https://github.com/christiandeange") {
-      Text("christiandeange")
+    Link {
+      GitHubIcon()
+      A(
+        href = "https://github.com/christiandeange",
+        attrs = { target(Blank) },
+      ) {
+        Text("christiandeange")
+      }
     }
 
-    EmailIcon()
-    A(
-      href = "mailto:me@christian.sh",
-      attrs = { target(Blank) },
-    ) {
-      Text("me@christian.sh")
+    Link {
+      EmailIcon()
+      A(
+        href = "mailto:me@christian.sh",
+        attrs = { target(Blank) },
+      ) {
+        Text("me@christian.sh")
+      }
     }
   }
 }
