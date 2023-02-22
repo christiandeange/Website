@@ -102,7 +102,10 @@ private fun Sidebar() {
   Section("Patents") {
     Job(
       {
-        A(href = "https://patents.google.com/patent/US11216795B2") {
+        A(
+          href = "https://patents.google.com/patent/US11216795B2",
+          attrs = { target(Blank) },
+        ) {
           Text("US11216795 B2")
         }
       }, "2019"
@@ -125,7 +128,10 @@ private fun WorkHistory() {
     Job("Senior Android Engineer | Square", "2020 – 2022") {
       Point {
         Text("Started development of ")
-        A(attrs = { href("https://developer.squareup.com/docs/terminal-api/overview") }) {
+        A(
+          href = "https://developer.squareup.com/docs/terminal-api/overview",
+          attrs = { target(Blank) },
+        ) {
           Text("Terminal API")
         }
         Text(" to enable merchants with their own existing point of sale system to take payments with Square Terminal. Assisted in maintaining our Gradle Enterprise instance, as well as creating internal build tools for developer efficiency and dependency management.")
@@ -135,7 +141,10 @@ private fun WorkHistory() {
     Job("Android Engineer | Square", "2017 – 2020") {
       Point {
         Text("Developing new features addressing the needs of small businesses and individual sellers using ")
-        A(attrs = { href("https://squareup.com/payments") }) {
+        A(
+          href = "https://squareup.com/payments",
+          attrs = { target(Blank) },
+        ) {
           Text("Square Point of Sale")
         }
         Text(". Designed a native onboarding experience for Canadian sellers.")
