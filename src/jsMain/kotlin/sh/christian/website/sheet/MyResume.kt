@@ -63,7 +63,6 @@ object MyResume : StyleSheet() {
 
     style(type("svg")) {
       padding(5.px)
-      marginLeft(20.px)
       marginRight(5.px)
       fontStyle("normal")
       color(Color.black)
@@ -79,8 +78,10 @@ object MyResume : StyleSheet() {
   val profileLink by style {
     padding(10.px, 0.px)
     display(Inline)
+    marginLeft(20.px)
     onPhone {
       display(Block)
+      marginLeft(0.px)
     }
   }
 
