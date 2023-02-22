@@ -20,9 +20,6 @@ object App : StyleSheet() {
     }
 
     group(type("html"), type("body")) style {
-      StyleVariables.mdcThemeSecondary(Color.white)
-      StyleVariables.mdcThemeOnSecondary(Color.black)
-
       width(100.percent)
       height(100.percent)
       margin(0.px)

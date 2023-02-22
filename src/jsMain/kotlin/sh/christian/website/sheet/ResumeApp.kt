@@ -5,9 +5,14 @@ import org.jetbrains.compose.web.css.CSSMediaQuery.MediaType.Enum.Print
 import org.jetbrains.compose.web.css.CSSSizeValue
 import org.jetbrains.compose.web.css.CSSUnit
 import org.jetbrains.compose.web.css.CSSUnitValueTyped
+import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.DisplayStyle.Companion.None
+import org.jetbrains.compose.web.css.LineStyle.Companion.Solid
 import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.StyleSheet
+import org.jetbrains.compose.web.css.backgroundColor
+import org.jetbrains.compose.web.css.border
+import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.keywords.auto
@@ -61,9 +66,20 @@ object ResumeApp : StyleSheet() {
         display(None)
       }
     }
+  }
 
-    style(selector(".mdc-fab")) {
-      padding(8.px)
+  val iconButton by style {
+    width(24.px)
+    height(24.px)
+    padding(8.px)
+    borderRadius(50.percent)
+    border(1.px, Solid, Color.black)
+
+    (self + hover) style {
+      backgroundColor(Color("#EBEBEB"))
+    }
+    (self + active) style {
+      backgroundColor(Color.darkgray)
     }
   }
 }

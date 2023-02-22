@@ -33,7 +33,6 @@ kotlin {
         implementation(compose.runtime)
         implementation(compose.web.core)
         implementation(compose.web.svg)
-        implementation("dev.petuska:kmdc-fab:0.1.0")
       }
     }
   }

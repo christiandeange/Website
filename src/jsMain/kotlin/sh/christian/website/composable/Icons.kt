@@ -1,12 +1,11 @@
 package sh.christian.website.composable
 
 import androidx.compose.runtime.Composable
-import dev.petuska.kmdc.fab.MDCFab
-import dev.petuska.kmdc.fab.MDCFabType
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.Div
 import org.w3c.dom.HTMLElement
 import sh.christian.website.icon.PrintIcon
+import sh.christian.website.sheet.ResumeApp.iconButton
 
 @Composable
 fun Icons(
@@ -14,12 +13,10 @@ fun Icons(
   onClick: (IconType) -> Unit,
 ) {
   Div(attrs) {
-    MDCFab(
-      type = MDCFabType.Mini,
-      attrs = {
-        onClick { onClick(IconType.Print) }
-      }
-    ) {
+    Div(attrs = {
+      classes(iconButton)
+      onClick { onClick(IconType.Print) }
+    }) {
       PrintIcon()
     }
   }
