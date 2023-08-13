@@ -149,7 +149,7 @@ private fun WorkHistory() {
         ) {
           Text("Terminal API")
         }
-        Text(" to enable merchants with their own existing point of sale system to take payments with Square Terminal. Assisted in maintaining our Gradle Enterprise instance, as well as creating internal build tools for developer efficiency and dependency management.")
+        Text(" to enable merchants with their own existing point of sale system to take payments with Square Terminal. Assisted in maintaining our Gradle Enterprise instance and creating internal build tools for developer efficiency and dependency management.")
       }
     }
 
@@ -167,7 +167,7 @@ private fun WorkHistory() {
     }
 
     Job("Android Developer | CareZone", "2016 – 2017") {
-      Point("Developed an internal app for inventory management that performs barcode scanning and recording a user's signature. Took full responsibility for development, testing, and internal distribution.")
+      Point("Developed an internal app for inventory management that performs barcode scanning and recording a user's signature. Took full responsibility for development, testing, and distribution for internal employees.")
     }
 
     Job("Android Developer Intern | CareZone", "2015") {
