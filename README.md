@@ -3,7 +3,7 @@
 
 ```bash
 # dev
-./gradlew jsBrowserDevelopment
+./gradlew jsBrowserDevelopmentRun --continuous
 
 # stage
 ./gradlew clean deploy --project-id <appengine-app-id>
