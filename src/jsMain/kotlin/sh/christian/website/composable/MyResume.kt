@@ -103,10 +103,25 @@ private fun Sidebar() {
     Job(
       {
         A(
+          href = "https://patents.google.com/patent/US20220237580A1",
+          attrs = { target(Blank) },
+        ) {
+          Text("US 2022/0237580 A1")
+        }
+      }, "2022"
+    ) {
+      Point(
+        "Multi-device authorization."
+      )
+    }
+
+    Job(
+      {
+        A(
           href = "https://patents.google.com/patent/US11216795B2",
           attrs = { target(Blank) },
         ) {
-          Text("US11216795 B2")
+          Text("US 11216795 B2")
         }
       }, "2019"
     ) {
