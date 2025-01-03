@@ -1,28 +1,22 @@
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalDistributionDsl
+
 plugins {
   kotlin("multiplatform")
+  kotlin("plugin.compose")
   id("org.jetbrains.compose")
 }
 
 group = "sh.christian.website"
 version = "3.0.0"
 
+val distributions = extensions.getByType<BasePluginExtension>().distsDirectory
+
 kotlin {
   js(IR) {
     browser {
-      commonWebpackConfig {
-        cssSupport { enabled.set(true) }
-        scssSupport { enabled.set(true) }
-      }
-      runTask {
-        sourceMaps = true
-      }
-
-      testTask {
-        testLogging.showStandardStreams = true
-        useKarma {
-          useChromeHeadless()
-          useFirefox()
-        }
+      @OptIn(ExperimentalDistributionDsl::class)
+      distribution {
+        outputDirectory = distributions
       }
     }
     binaries.executable()
@@ -31,8 +25,8 @@ kotlin {
     val jsMain by getting {
       dependencies {
         implementation(compose.runtime)
-        implementation(compose.web.core)
-        implementation(compose.web.svg)
+        implementation(compose.html.core)
+        implementation(compose.html.svg)
       }
     }
   }
@@ -57,6 +51,13 @@ abstract class DeployTask
   )
   val promote: Property<Boolean> = objects.property<Boolean>().convention(false)
 
+  @get:Input
+  @get:Option(
+    option = "version",
+    description = "The version of the service to deploy",
+  )
+  val version: Property<String> = objects.property()
+
   @get:InputDirectory
   @get:PathSensitive(PathSensitivity.RELATIVE)
   val inputFolder: DirectoryProperty = objects.directoryProperty()
@@ -69,7 +70,7 @@ abstract class DeployTask
         "gcloud", "app", "deploy",
         "--project", projectId.get(),
         if (promote.get()) "--promote" else "--no-promote",
-        "--version", "3",
+        "--version", version.get(),
       )
     }
   }
@@ -77,5 +78,7 @@ abstract class DeployTask
 
 tasks.register<DeployTask>("deploy") {
   dependsOn(tasks.named("jsBrowserDistribution"))
-  inputFolder.set(project.extensions.getByType<BasePluginExtension>().distsDirectory)
+
+  inputFolder = distributions
+  version = project.version.toString().substringBefore('.')
 }
