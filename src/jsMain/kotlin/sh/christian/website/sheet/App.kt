@@ -34,7 +34,7 @@ object App : StyleSheet() {
 
     type("a") style {
       textDecoration("none")
-      color(Color.black)
+      color(Color("#333333"))
     }
   }
 }

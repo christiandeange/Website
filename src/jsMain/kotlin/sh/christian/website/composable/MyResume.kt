@@ -137,7 +137,16 @@ private fun Sidebar() {
 private fun WorkHistory() {
   Section("Work") {
     Job("Software Engineer | Stripe", "2022 – present") {
-      Point("Enhancing the Terminal integration experience, building the product that developers use to create in-person payment flows. Maintaining the Terminal SDK for Android, the Terminal docs, and building internal- and external-facing tools to help developers build better integrations.")
+      Point {
+        Text("Enhancing the Terminal Android SDK integration experience, which developers can use to create in-person payment experiences. Maintaining the SDK, documentation, and tooling to help developers build better integrations. In 2024 I began to focus solely on the ")
+        A(
+          href = "https://stripe.com/terminal/tap-to-pay",
+          attrs = { target(Blank) },
+        ) {
+          Text("Tap to Pay SDK")
+        }
+        Text(", with a focus on improving its security posture and overall processing performance.")
+      }
     }
 
     Job("Senior Android Engineer | Square", "2020 – 2022") {
