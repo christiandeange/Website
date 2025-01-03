@@ -164,7 +164,7 @@ private fun WorkHistory() {
 
     Job("Android Engineer | Square", "2017 – 2020") {
       Point {
-        Text("Developing new features addressing the needs of small businesses and individual sellers using ")
+        Text("Developed new features addressing the needs of small businesses and individual sellers using ")
         A(
           href = "https://squareup.com/payments",
           attrs = { target(Blank) },
