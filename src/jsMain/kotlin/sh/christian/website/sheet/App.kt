@@ -1,16 +1,22 @@
 package sh.christian.website.sheet
 
+import org.jetbrains.compose.web.css.CSSMediaQuery.MediaType
+import org.jetbrains.compose.web.css.CSSMediaQuery.MediaType.Enum.Print
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.StyleSheet
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.fontFamily
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.margin
+import org.jetbrains.compose.web.css.media
 import org.jetbrains.compose.web.css.overflow
 import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.textDecoration
+import org.jetbrains.compose.web.css.textDecorationLine
+import org.jetbrains.compose.web.css.textDecorationStyle
+import org.jetbrains.compose.web.css.textDecorationThickness
 import org.jetbrains.compose.web.css.width
 
 object App : StyleSheet() {
@@ -33,8 +39,18 @@ object App : StyleSheet() {
     }
 
     type("a") style {
-      textDecoration("none")
+      textDecoration("underline")
+      textDecorationStyle("dashed")
+      textDecorationLine("underline")
+      textDecorationThickness("1px")
+      property("text-underline-position", "under")
       color(Color("#333333"))
+    }
+
+    media(MediaType(Print)) {
+      type("a") style {
+        textDecoration("none")
+      }
     }
   }
 }
