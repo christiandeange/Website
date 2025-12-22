@@ -34,6 +34,7 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.textAlign
 import org.jetbrains.compose.web.css.textDecoration
+import org.jetbrains.compose.web.css.whiteSpace
 import org.jetbrains.compose.web.css.width
 
 object MyResume : StyleSheet() {
@@ -99,6 +100,11 @@ object MyResume : StyleSheet() {
   val job by style {
     fontSize(0.8.em)
     lineHeight(1.5.em)
+    whiteSpace("pre-line")
+
+    onPhone {
+      whiteSpace("normal")
+    }
   }
 
   val skill by style {
@@ -125,16 +131,17 @@ object MyResume : StyleSheet() {
     centeredOnPhone(default = "left")
   }
 
-  val flex1 by style { flex(1) }
-  val flex2 by style { flex(2) }
-  val flex3 by style { flex(3) }
-  val flex4 by style { flex(4) }
-  val flex5 by style { flex(5) }
-  val flex6 by style { flex(6) }
-  val flex7 by style { flex(7) }
-  val flex8 by style { flex(8) }
-  val flex9 by style { flex(9) }
-  val flex10 by style { flex(10) }
+  val sidebar by style {
+    flex(1)
+  }
+
+  val workHistory by style {
+    flex(2)
+  }
+
+  val sidebarSection by style {
+    marginRight(16.px)
+  }
 
   val point by style {
     display(Block)

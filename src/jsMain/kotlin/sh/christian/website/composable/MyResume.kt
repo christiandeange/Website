@@ -2,7 +2,6 @@ package sh.christian.website.composable
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.attributes.ATarget.Blank
-import org.jetbrains.compose.web.attributes.href
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.dom.A
@@ -14,12 +13,13 @@ import org.w3c.dom.HTMLElement
 import sh.christian.website.icon.EmailIcon
 import sh.christian.website.icon.GitHubIcon
 import sh.christian.website.sheet.MyResume
-import sh.christian.website.sheet.MyResume.flex1
-import sh.christian.website.sheet.MyResume.flex2
+import sh.christian.website.sheet.MyResume.sidebar
+import sh.christian.website.sheet.MyResume.workHistory
 import sh.christian.website.sheet.MyResume.infocolumn
 import sh.christian.website.sheet.MyResume.inforow
 import sh.christian.website.sheet.MyResume.links
 import sh.christian.website.sheet.MyResume.name
+import sh.christian.website.sheet.MyResume.sidebarSection
 import sh.christian.website.sheet.MyResume.phoneCentered
 import sh.christian.website.sheet.MyResume.resumeHeader
 import kotlin.text.Typography.nbsp
@@ -37,10 +37,10 @@ fun MyResume(
     }
 
     Div(attrs = { classes(inforow) }) {
-      Div(attrs = { classes(infocolumn, flex1) }) {
+      Div(attrs = { classes(infocolumn, sidebar) }) {
         Sidebar()
       }
-      Div(attrs = { classes(infocolumn, flex2) }) {
+      Div(attrs = { classes(infocolumn, workHistory) }) {
         WorkHistory()
       }
     }
@@ -81,53 +81,74 @@ private fun Links() {
 
 @Composable
 private fun Sidebar() {
-  Section("Skills") {
-    Div(attrs = { classes(phoneCentered) }) {
-      Skill("Kotlin", 5)
-      Skill("Java", 5)
-      Skill("Gradle", 5)
-      Skill("Bash", 4)
-      Skill("Python", 3)
-    }
+  Section("Skills", childAttrs = { classes(phoneCentered) }) {
+    Skill("Kotlin", 5)
+    Skill("Java", 5)
+    Skill("Gradle", 5)
+    Skill("Bash", 4)
+    Skill("Python", 3)
     Br()
   }
 
-  Section("Education") {
+  Section("Education", childAttrs = { classes(sidebarSection) }) {
     Job("University of Waterloo", "2016") {
       Point("Bachelor of Software Engineering")
       Point("Graduated with Distinction")
     }
   }
 
-  Section("Patents") {
+  Section("Patents", childAttrs = { classes(sidebarSection) }) {
     Job(
       {
         A(
-          href = "https://patents.google.com/patent/US20220237580A1",
+          href = "https://patents.google.com/patent/US20250356332A1",
           attrs = { target(Blank) },
         ) {
-          Text("US 2022/0237580 A1")
+          Text("US20250356332A1")
         }
-      }, "2022"
+      }, "pending"
     ) {
-      Point(
-        "Multi-device authorization."
-      )
+      Point("Systems and methods of generating anonymized analytics data")
     }
 
     Job(
       {
         A(
-          href = "https://patents.google.com/patent/US11216795B2",
+          href = "https://patents.google.com/patent/US12400202B2",
           attrs = { target(Blank) },
         ) {
-          Text("US 11216795 B2")
+          Text("US12400202B2")
+        }
+      }, "2024"
+    ) {
+      Point("Area-based identification of devices for pairing")
+    }
+
+    Job(
+      {
+        A(
+          href = "https://patents.google.com/patent/US12002027B2",
+          attrs = { target(Blank) },
+        ) {
+          Text("US12002027B2")
+        }
+      }, "2022"
+    ) {
+      Point("Multi-device authorization")
+    }
+
+    Job(
+      {
+        A(
+          href = "https://patents.google.com/patent/US11328277B2",
+          attrs = { target(Blank) },
+        ) {
+          Text("US11328277B2")
         }
       }, "2019"
     ) {
       Point(
-        "Pairing merchant Point${nbsp}of${nbsp}Sale with payment${nbsp}reader${nbsp}terminal " +
-            "via server Application${nbsp}Programming${nbsp}Interface."
+        "Merchant point${nbsp}of${nbsp}sale collaborating with payment reader terminal via server application${nbsp}programming${nbsp}interface"
       )
     }
   }
